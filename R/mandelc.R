@@ -20,21 +20,18 @@
 #' @param iter maximum number of iterations
 #'
 #' @return A list with components: \code{x}, a vector of x coordinates,
-#' \code{y}, a vector of y coordinates, and \code{z}, a nx * ny matrix with
+#' \code{y}, a vector of y coordinates, and \code{z}, a \code{nx} * \code{ny} matrix with
 #' the set.
 #'
 #' @examples
 #' z <- mandelbrot()
-#' image(z)
+#' image(z, col=c(heat.colors(49), "black"), las=1)
 #'
 #' @useDynLib fractal mandelbrot_
 #' @export
 
-mandelbrot <- function(x = c(-3, 1),        # x limits
-                       y = c(-1.8, 1.8),    # y limits
-                       nx = 600,            # x resolution
-                       ny = 600,            # y resolution
-                       iter = 20)           # maximun number of iterations
+mandelbrot <- function(x = c(-2, 1), y = c(-1.5, 1.5), nx = 600, ny = 600,
+                       iter = 80)
 {
   if(is.list(x)) {
      y <- range(x$y)

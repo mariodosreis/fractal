@@ -4,8 +4,8 @@
 \alias{mandelbrot}
 \title{The Mandelbrot Set}
 \usage{
-mandelbrot(x = c(-3, 1), y = c(-1.8, 1.8), nx = 600, ny = 600,
-  iter = 20)
+mandelbrot(x = c(-2, 1), y = c(-1.5, 1.5), nx = 600, ny = 600,
+  iter = 80)
 }
 \arguments{
 \item{x}{x limits}
@@ -20,7 +20,7 @@ mandelbrot(x = c(-3, 1), y = c(-1.8, 1.8), nx = 600, ny = 600,
 }
 \value{
 A list with components: \code{x}, a vector of x coordinates,
-\code{y}, a vector of y coordinates, and \code{z}, a nx * ny matrix with
+\code{y}, a vector of y coordinates, and \code{z}, a \code{nx} * \code{ny} matrix with
 the set.
 }
 \description{
@@ -28,7 +28,7 @@ A function to calculate the Mandelbrot set
 }
 \examples{
 z <- mandelbrot()
-image(z)
+image(z, col=c(heat.colors(49), "black"), las=1)
 
 }
 
