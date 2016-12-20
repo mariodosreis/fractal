@@ -39,7 +39,7 @@ void mandelbrot_(double *xcoo, double *ycoo, int *nx,
 
         oldz[0] = z[0]; oldz[1] = z[1];
 
-        // the mandelbrot mapping z -> z^2 + c
+        /* the mandelbrot mapping z -> z^2 + c */
         z[0] = oldz[0]*oldz[0] - oldz[1]*oldz[1] + c[0];
         z[1] = 2 * oldz[0]*oldz[1] + c[1];
 
