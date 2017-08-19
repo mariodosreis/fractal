@@ -17,3 +17,5 @@ z <- mandelbrot(iter=40)
 par(pty="s")
 image(z, col=c(topo.colors(n),"black"), las=1)
 ~~~
+
+![The Mandelbrot set](figs/mandel.png)
