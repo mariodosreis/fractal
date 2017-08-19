@@ -7,3 +7,13 @@ If you have the devtools package installed (and if you have set up an appropriat
 ~~~
 > devtools::install_github ("mariodosreis/fractal")
 ~~~
+
+# Examples
+
+Plot the set
+
+~~~
+z <- mandelbrot(iter=40)
+par(pty="s")
+image(z, col=c(topo.colors(n),"black"), las=1)
+~~~
