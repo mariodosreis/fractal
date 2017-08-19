@@ -5,7 +5,7 @@
 \title{The Mandelbrot Set}
 \usage{
 mandelbrot(x = c(-2, 1), y = c(-1.5, 1.5), nx = 600, ny = 600,
-  iter = 80)
+  iter = 50)
 }
 \arguments{
 \item{x}{x limits}
