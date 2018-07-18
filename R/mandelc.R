@@ -36,7 +36,7 @@
 #' @examples
 #' z <- mandelbrot()
 #' # The set is black
-#' image(z, col=c(heat.colors(49), "black"), las=1)
+#' image(z, col=c(heat.colors(50), "black"), las=1)
 #'
 #' @useDynLib fractal mandelbrot_
 #' @export
