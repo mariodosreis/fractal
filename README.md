@@ -13,7 +13,8 @@ If you have the devtools package installed (and if you have set up an appropriat
 Plot the set
 
 ~~~
-z <- mandelbrot(iter=40)
+n <- 40
+z <- fractal::mandelbrot(iter=n)
 par(pty="s")
 image(z, col=c(topo.colors(n),"black"), las=1)
 ~~~
