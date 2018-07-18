@@ -22,14 +22,15 @@
 #' @details The set is obtained by iterating \eqn{z_{j+1}=z_j^2+c} where
 #' \eqn{z} and \eqn{c} are complex numbers. The initial value of \eqn{z},
 #' \eqn{z_0} is 0, and the value of \eqn{c} is chosen arbitrarily.
-#' It can be shown that if after a certain number of iterations the modulus of
-#' \eqn{Z} is greater than 2, then the value of \eqn{z} will head off to
+#' It can be shown that if after a certain number of iterations \eqn{i} the modulus 
+#' of \eqn{Z} is greater than 2, then the value of \eqn{z} will head off to
 #' infinity. The Mandelbrot set is defined as the set of points \eqn{c} in the
-#' complex plane for which the iteration procedure is bound.
+#' complex plane for which the iteration procedure is bound (that is, for which
+#' \eqn{z} does not head off to infinity).
 #'
 #' @return A list with components: \code{x}, a vector of \eqn{x} coordinates (real
 #' part), \code{y}, a vector of \eqn{y} coordinates (imaginary part), and \code{z},
-#' a \code{nx} * \code{ny} matrix with the number of interations used to
+#' a \code{nx} * \code{ny} matrix with the number of interations \eqn{i} used to
 #' evaluate the complex point \eqn{c = x + yi}.
 #'
 #' @examples
