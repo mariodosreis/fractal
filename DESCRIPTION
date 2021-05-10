@@ -1,11 +1,11 @@
 Package: fractal
 Type: Package
 Title: Fractal
-Version: 0.1
+Version: 0.2
 Date: 2016-12-17
 Author: Mario dos Reis
 Maintainer: Mario dos Reis <mariodosreis@gmail.com>
 Description: Calculates the Maldenbrot set.
 License: MIT + file LICENSE
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 7.1.1
