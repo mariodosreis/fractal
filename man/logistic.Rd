@@ -57,8 +57,11 @@ logistic(div=4000, k=128)
 
 }
 \references{
-Tien-Yin Li and James A. Yorke. (1975) Period three imples chaos. \emph{
+Tien-Yin Li and James A. Yorke. (1975) Period three implies chaos. \emph{
 The American Mathematical Monthly}, 82: 985--992.
+
+May R. (1976) Simple mathematical models with very complicated dynamics.
+\emph{Nature}, 261: 459--467.
 }
 \author{
 Mario dos Reis

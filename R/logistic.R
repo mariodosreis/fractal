@@ -22,8 +22,11 @@
 #' This function plots the long-term values of X(t) as a function of r.
 #'
 #' @references
-#' Tien-Yin Li and James A. Yorke. (1975) Period three imples chaos. \emph{
+#' Tien-Yin Li and James A. Yorke. (1975) Period three implies chaos. \emph{
 #' The American Mathematical Monthly}, 82: 985--992.
+#'
+#' May R. (1976) Simple mathematical models with very complicated dynamics.
+#' \emph{Nature}, 261: 459--467.
 #'
 #' @author
 #' Mario dos Reis
@@ -49,23 +52,23 @@ logistic <- function(x.init = .01, gen = 50, rlim = c(3.2, 4), ylim=c(0, 1), pch
 
   for(r in seq(rlim[1], rlim[2], by = rlim[2] / div)) {
 
+    x.init. <- x.init
+
     # run for 'gen' iterations to reach 'stationarity'
     for(i in seq(0, gen)) {
 
-      x.next = lg(x.init, r)
-      x.init = x.next
+      x.next = lg(x.init., r)
+      x.init. = x.next
 
     }
 
     # plot state for 'k' additional iterations and plot
     if (r < 3.4) k. <- 4 else k. <- k
-    for(i in seq(0, k.)) {
+    x. <- numeric(k.); x.[1] <- x.init.
+    for(i in 2:k.) {
 
-      x.next = lg(x.init, r)
-      x.init = x.next
-
-      points(r, x.next, pch = pch, col = col)
-
+      x.[i] <- lg(x.[i-1], r)
     }
+    points(rep(r, k.), x., pch = pch, col = col)
   }
 }
