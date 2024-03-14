@@ -11,7 +11,7 @@
 
 #' The Mandelbrot Set
 #'
-#' A function to calculate the Mandelbrot set
+#' Calculate the Mandelbrot set
 #'
 #' @param x x limits
 #' @param y y limits
@@ -22,7 +22,7 @@
 #' @details The set is obtained by iterating \eqn{z_{j+1}=z_j^2+c} where
 #' \eqn{z} and \eqn{c} are complex numbers. The initial value of \eqn{z},
 #' \eqn{z_0} is 0, and the value of \eqn{c} is chosen arbitrarily.
-#' It can be shown that if after a certain number of iterations \eqn{i} the modulus 
+#' It can be shown that if after a certain number of iterations, the modulus
 #' of \eqn{Z} is greater than 2, then the value of \eqn{z} will head off to
 #' infinity. The Mandelbrot set is defined as the set of points \eqn{c} in the
 #' complex plane for which the iteration procedure is bound (that is, for which
@@ -36,7 +36,7 @@
 #' @examples
 #' z <- mandelbrot()
 #' # The set is black
-#' image(z, col=c(heat.colors(50), "black"), las=1)
+#' image(z, col=c(hcl.colors(n=100, pal="Lisbon"), "black"), las=1)
 #'
 #' @useDynLib fractal mandelbrot_
 #' @export
@@ -68,32 +68,3 @@ mandelbrot <- function(x = c(-2, 1), y = c(-1.5, 1.5), nx = 600, ny = 600,
   # suitable for image(), persp(), etc. and return it.
   return(list(x = xcoo, y = ycoo, z = matrix(the.set, ncol = ny, byrow = TRUE)));
 }
-
-##' Zoom into a fractal
-##'
-##' Selects a region of a fractal image an zooms into it.
-##' @export
-# zoom <- function(col = c(heat.colors(49), "black"), fun = "mandelbrot", mu,
-#                  nx = 600, ny = 600, iter = NULL, plot = TRUE, inv = TRUE)
-# {
-#   coo <- locator(2)
-#
-#   coo$y[2] = coo$y[1] + diff(range(coo$x))
-#
-#   if(is.null(iter)) # not working well yet!
-#     iter <- floor(5 * 30 / diff(range(coo$x)))
-#
-#   if(fun == "mandelbrot")
-#     frac <- mandelbrot(x = coo$x, y = coo$y, nx = nx, ny = ny, iter = iter)
-#   if(fun == "julia")
-#     frac <- julia(x = coo$x, y = coo$y, mu = mu, nx = nx, ny = ny, iter = iter)
-#
-#   rect(coo$x[1], coo$y[1], coo$x[2], coo$y[2], lwd = 2, border="blue")
-#
-#   #dev.new()
-#
-#   if(inv) image(x = frac$x, y = frac$y, z = -1/frac$z, col = col, xlab="", ylab="", main=iter)
-#   else    image(frac, col = col, xlab="", ylab="", main=iter)
-#
-#   invisible(frac)
-# }

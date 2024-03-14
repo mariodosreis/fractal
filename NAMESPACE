@@ -2,4 +2,5 @@
 
 export(logistic)
 export(mandelbrot)
+export(zoom)
 useDynLib(fractal,mandelbrot_)
